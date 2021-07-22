@@ -1,12 +1,15 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <!--
-            <ul *ngFor="let index of paises">
-                <li>{{index.name}} / {{index.alpha2Code}}</li>
-            </ul>
-
-            -->
+<div class="cartas card-columns">
+    <div *ngFor="let cancion of nuevasCanciones" class="card" style="width: 18rem;"  >
+        <img class="card-img-top" [src]="cancion.images[0].url" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{cancion.name}}</h5>
+            <span class="badge badge-pill badge-primary"*ngFor="let index of cancion.artists" >
+                {{index.name}}
+            </span>
+            <p class="card-text">{{cancion.type}}</p>
         </div>
     </div>
 </div>
+
+
+

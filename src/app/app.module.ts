@@ -7,7 +7,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { SearchComponent } from './componentes/search/search.component';
 import { ArtistaComponent } from './componentes/artista/artista.component';
 import { NavbarComponent } from './componentes/shared/navbar/navbar.component';
-
+import { CommonModule } from '@angular/common';
 //Peticiones
 import {HttpClientModule} from '@angular/common/http';
 // Servicios
@@ -26,7 +26,8 @@ import { SpotifyService } from './services/spotify.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [SpotifyService],
   bootstrap: [AppComponent]
