@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 // Servicios
 import { SpotifyService } from './services/spotify.service';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
+import { LoadingComponent } from './componentes/shared/loading/loading.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { SpotifyService } from './services/spotify.service';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
  
   ],
   imports: [

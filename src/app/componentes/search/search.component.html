@@ -1,17 +1,8 @@
-<div class="pepe row">
-    <div class="col-lg-12">
+<div class="pepe row ">
+    <div class="col-lg-12 ">
         <input type="text" class="form-control" (keyup)="buscar(termino.value)" placeholder="Buscar artista..." #termino>
     </div>
     <hr>
-
-
-    <div class="cartas card-columns">
-        <div *ngFor="let artista of artistas" class="card" >
-            <img class="card-img-top" [src]="artista.images[0].url" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{artista.name}}</h5>
-
-            </div>
-        </div>
-    </div>
+    <app-loading class="m-5 text-center" *ngIf="loading"></app-loading>
+    <app-tarjetas [items]="artistas" *ngIf="!loading" class="cartas"></app-tarjetas>
 </div>

@@ -1,1 +1,13 @@
-<p>artista works!</p>
+<div class="card text-center" >
+    <div class="card-body">
+    <img [src]="arrayArtista.images | noimage" class="imagen">
+      <h5 class="card-title">{{arrayArtista.name}}</h5>
+      <p class="card-text"> <b>Popularidad: </b>{{arrayArtista.popularity}}</p>
+      <p class="card-text"> <b>Seguidores: </b>{{arrayArtista.followers.total}}</p>
+      <a [href]="arrayArtista.external_urls.spotify" target="_blank">Página artista</a>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    <img class="card-img-bottom" src="..." alt="Card image cap">
+</div>
+
+
