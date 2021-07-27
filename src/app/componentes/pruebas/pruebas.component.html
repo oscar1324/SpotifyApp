@@ -1,0 +1,9 @@
+<div class="pruebas">
+    <h3> ¡Bienvenido al componente de pruebas!</h3>
+    <hr>
+
+    <form [formGroup]="form" >
+        <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+        <button type="button" class="btn btn-primary" (click)="onSubmit(model)">Enviar</button>
+    </form>
+</div>

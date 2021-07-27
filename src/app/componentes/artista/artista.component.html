@@ -1,13 +1,37 @@
+<app-loading *ngIf="loading"></app-loading>
 <div class="card text-center" >
-    <div class="card-body">
-    <img [src]="arrayArtista.images | noimage" class="imagen">
+  <div class="card-body">
+  <img [src]="arrayArtista.images | noimage" class="imagen">
       <h5 class="card-title">{{arrayArtista.name}}</h5>
-      <p class="card-text"> <b>Popularidad: </b>{{arrayArtista.popularity}}</p>
-      <p class="card-text"> <b>Seguidores: </b>{{arrayArtista.followers.total}}</p>
       <a [href]="arrayArtista.external_urls.spotify" target="_blank">Página artista</a>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-    <img class="card-img-bottom" src="..." alt="Card image cap">
+  </div>
+  <hr>
+
+  <table class="table ">
+    <thead >
+      <tr>
+        <th>Foto</th>
+        <th>Album</th>
+        <th>Cancion</th>
+        <th>Vista previa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let index of arrayTracks">
+        <td>
+          <img [src]="index.album.images | noimage" width="70px" height="70px">
+        </td>
+        <td>{{index.album.name}}</td>
+        <td>{{index.name}}</td>
+        <td>
+          <iframe [src]="index.uri | domseguro :'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn-outline-danger btn-block boton " routerLink="/search">Regresar</button>
+
+
 </div>
 
 

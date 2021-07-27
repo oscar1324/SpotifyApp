@@ -15,7 +15,12 @@ import { SpotifyService } from './services/spotify.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { LoadingComponent } from './componentes/shared/loading/loading.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PruebasComponent } from './componentes/pruebas/pruebas.component';
+import { DomseguroPipe } from './services/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -26,14 +31,20 @@ import { LoadingComponent } from './componentes/shared/loading/loading.component
     NavbarComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    PruebasComponent,
+    DomseguroPipe
  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyBootstrapModule,
+    BrowserAnimationsModule
   ],
   providers: [SpotifyService],
   bootstrap: [AppComponent]

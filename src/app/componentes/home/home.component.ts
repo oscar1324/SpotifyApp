@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   paises: any[] =[];
   nuevasCanciones:any [] = [];
   loading: boolean;
-
+  error: boolean = false;
   constructor(private http: HttpClient, private servicioSpotify: SpotifyService) { 
     this.loading = true;
 
@@ -21,7 +21,11 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.nuevasCanciones = data;
       this.loading = false;
-    });
+    }, (errorServicio) =>{
+      console.log("Se ha producido un error en servicio:");
+      console.log(errorServicio);
+      this.error = true;
+    } );
   }
 
   ngOnInit(): void {
